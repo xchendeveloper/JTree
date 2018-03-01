@@ -60,7 +60,7 @@ Node node1 = JTree.get("mytree").getNodeById(node,3);
 List<Object> idList = JTree.get("mytree").getSubNodeIdList(node1,true,true);
 ```
 
-## Get a list of the node Id of the specified node under the tree
+## Get a list of the node Id of the specified nodeid under the tree
 ```java
 Node node = JTree.init("mytree").generalTree(dataList);
 List<Object> nodeList = JTree.get("mytree").getTreeSubNodeIdListById(node,3,true,true);
