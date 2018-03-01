@@ -19,7 +19,6 @@ public class JTree {
     private String pId = "pId";
 
     private static ConcurrentMap<String,JTree> cache = new ConcurrentHashMap<String,JTree>();
-    private ThreadLocal currentJTree = new ThreadLocal();
 
     private JTree() {
     }
