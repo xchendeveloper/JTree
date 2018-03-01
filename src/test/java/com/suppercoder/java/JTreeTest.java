@@ -1,25 +1,24 @@
-# JTree
-=============
-Simple fast generation tree and traversing tree tools
+package com.suppercoder.java;
 
-# How to use
+import com.suppercoder.java.jtree.JTree;
+import com.suppercoder.java.jtree.Node;
+import com.xiaoleilu.hutool.json.JSONUtil;
+import com.xiaoleilu.hutool.lang.Console;
+import org.junit.Before;
+import org.junit.Test;
 
-```java
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
-public class Organization {
+/**
+ * test
+ *
+ * @author chenxing
+ * @create 2018-03-01 11:03
+ **/
 
-    public Organization(int orgId, int parentId, String name) {
-        this.orgId = orgId;
-        this.parentId = parentId;
-        this.name = name;
-    }
-
-    private int orgId;
-    private int parentId;
-    private String name;
-}
-
-// test case
 public class JTreeTest {
 
     List<Organization> dataList = null;
@@ -130,8 +129,5 @@ public class JTreeTest {
             Console.log(id);
         }
     }
+
 }
-```
-
-
-
