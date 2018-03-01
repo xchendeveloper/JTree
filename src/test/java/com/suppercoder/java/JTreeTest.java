@@ -21,7 +21,8 @@ import java.util.Map;
 
 public class JTreeTest {
 
-    List<Organization> dataList = null;
+    static List<Organization> dataList = null;
+    static Node node = null;
 
     @Before
     public void setUp() {
@@ -62,18 +63,19 @@ public class JTreeTest {
         dataList.add(subNode2_SubNode1_SubNode1);
         dataList.add(subNode2_SubNode1_SubNode2);
 
+        if(node == null){
+            node = JTree.init("mytree","orgId","parentId").generalTree(dataList);
+        }
     }
 
     @Test
     public void generalTree(){
-        Node node = JTree.init("mytree","orgId","parentId").generalTree(dataList);
         Map<String,Object> result = node.toMap();
         Console.log(JSONUtil.toJsonPrettyStr(result));
     }
 
     @Test
     public void treeToNodeList(){
-        Node node = JTree.init("mytree","orgId","parentId").generalTree(dataList);
         List<Node> nodeList = new ArrayList<Node>();
         JTree.get("mytree").treeToNodeList(node,nodeList);
         for(Node node1 : nodeList){
@@ -84,7 +86,6 @@ public class JTreeTest {
 
     @Test
     public void getNodeById(){
-        Node node = JTree.init("mytree","orgId","parentId").generalTree(dataList);
         Node node1 = JTree.get("mytree").getNodeById(node,3);
         Organization organization = (Organization) node1.getData();
         Console.log(organization.getOrgId() + "-"+ organization.getParentId()+"-"+organization.getName());
@@ -92,7 +93,6 @@ public class JTreeTest {
 
     @Test
     public void getSubNodeList(){
-        Node node = JTree.init("mytree","orgId","parentId").generalTree(dataList);
         Node node1 = JTree.get("mytree").getNodeById(node,3);
         List<Node> nodeList = JTree.get("mytree").getSubNodeList(node1,true,true);
         for(Node node2 : nodeList){
@@ -103,7 +103,6 @@ public class JTreeTest {
 
     @Test
     public void getSubNodeIdList(){
-        Node node = JTree.init("mytree","orgId","parentId").generalTree(dataList);
         Node node1 = JTree.get("mytree").getNodeById(node,3);
         List<Object> list = JTree.get("mytree").getSubNodeIdList(node1,true,true);
         for(Object id : list){
@@ -113,7 +112,7 @@ public class JTreeTest {
 
     @Test
     public void getTreeSubNodeListById(){
-        Node node = JTree.init("mytree","orgId","parentId").generalTree(dataList);
+
         List<Node> nodeList = JTree.get("mytree").getTreeSubNodeListById(node,3,true,true);
         for(Node node2 : nodeList){
             Organization organization = (Organization) node2.getData();
@@ -123,7 +122,6 @@ public class JTreeTest {
 
     @Test
     public void getTreeSubNodeIdListById(){
-        Node node = JTree.init("mytree","orgId","parentId").generalTree(dataList);
         List<Object> nodeList = JTree.get("mytree").getTreeSubNodeIdListById(node,3,true,true);
         for(Object id : nodeList){
             Console.log(id);
