@@ -26,7 +26,7 @@ we can also do it when we init JTree
 Node tree = JTree.init("mytree").generalTree(dataList);
 ```
 
-## transfer tree to map
+## Transfer tree to map
 ```java
 Map<String,Object> map = tree.toMap();
 ```
