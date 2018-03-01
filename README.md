@@ -1,6 +1,7 @@
 # JTree
 
 [![Build Status](https://travis-ci.org/xchendeveloper/JTree.svg?branch=master)](https://travis-ci.org/xchendeveloper/JTree)
+[![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://github.com/xchendeveloper/JTree/blob/master/LICENSE)
 
 Simple fast generation tree and traversing tree tools
 
