@@ -15,8 +15,11 @@ import java.util.concurrent.ConcurrentMap;
 
 public class JTree {
 
-    private String id = "id";
-    private String pId = "pId";
+    private static String ID = "id";
+    private static String PID = "pid";
+
+    private String id = ID;
+    private String pId = PID;
 
     private static ConcurrentMap<String,JTree> cache = new ConcurrentHashMap<String,JTree>();
     private ThreadLocal currentJTree = new ThreadLocal();
@@ -43,6 +46,10 @@ public class JTree {
         JTree jTree = new JTree(id, pId);
         cache.put(treeName,new JTree(id, pId));
         return jTree;
+    }
+
+    public static JTree init(String treeName){
+        return init(treeName,ID,PID);
     }
 
     /**
@@ -194,7 +201,7 @@ public class JTree {
     //===================extend method begin===================
 
     /**
-     * get the sub nodes of the specified node under the tree
+     * get the sub nodes of the specified node id under the tree
      *
      * @param tree
      * @param nodeId
