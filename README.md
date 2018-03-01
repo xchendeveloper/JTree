@@ -23,7 +23,24 @@ Node tree = jtree.generalTree(dataList);
 ```
 we can also do it when we init JTree
 ```java
-Node node = JTree.init("mytree").generalTree(dataList);
+Node tree = JTree.init("mytree").generalTree(dataList);
+```
+
+## transfer tree to map
+```java
+Map<String,Object> map = tree.toMap();
+```
+if your dateItem is not javaBean,toMap() function will failed，you should implement your own NodeData2MapGenerator，eg:
+```java
+public class Bean2MapGenerator implements NodeData2MapGenerator {
+    public Map generate(Object obj) {
+        return BeanUtil.beanToMap(obj);
+    }
+}
+```
+and use your generator like this:
+```java
+tree.toMap(new Bean2MapGenerator);
 ```
 
 ## Transfer tree to node list
