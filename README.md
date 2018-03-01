@@ -7,6 +7,7 @@ Simple fast generation tree and traversing tree tools
 # How to use
 
 ## Get JTree 
+Specify the name of id and parentId of dataItem
 ```java
 Jtree jtree = JTree.init("mytree","xxxid","xxxpid");
 ```
