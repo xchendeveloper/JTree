@@ -1,5 +1,7 @@
 # JTree
 
+[![Build Status](https://travis-ci.org/xchendeveloper/JTree.svg?branch=master)](https://travis-ci.org/xchendeveloper/JTree)
+
 Simple fast generation tree and traversing tree tools
 
 # How to use
