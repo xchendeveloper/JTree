@@ -7,6 +7,20 @@ Simple fast generation tree and traversing tree tools
 
 # How to use
 
+1.use maven
+```
+    <dependency>
+      <groupId>com.github.xchendeveloper</groupId>
+      <artifactId>JTree</artifactId>
+      <version>1.0</version>
+    </dependency>
+```
+2.download code by command :
+```
+git clone https://github.com/xchendeveloper/JTree.git
+```
+
+
 ## Get JTree 
 Specify the name of id and parentId of dataItem
 ```java
